@@ -4,7 +4,8 @@ RUN         cd /opt && curl -L https://corretto.aws/downloads/latest/amazon-corr
 ENV         PATH=$PATH:/opt/apache-maven-3.9.9/bin:/opt/amazon-corretto-17.0.12.7.1-linux-x64/bin
 RUN         mkdir /app
 WORKDIR     /app
-COPY        src pom.xml /app/
+COPY        src /app/src
+COPY        pom.xml /app/
 RUN         ls -l /app
 
 
