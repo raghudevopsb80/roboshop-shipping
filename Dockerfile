@@ -5,8 +5,9 @@ ENV         PATH=$PATH:/opt/apache-maven-3.9.9/bin:/opt/amazon-corretto-17.0.12.
 RUN         mkdir /app
 WORKDIR     /app
 COPY        src /app/src
-COPY        pom.xml /app/
-RUN         ls -l /app
+COPY        pom.xml run.sh /app/
+RUN         mvn clean package
+C
 
 
 
