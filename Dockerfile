@@ -7,7 +7,7 @@ WORKDIR     /app
 COPY        src /app/src
 COPY        pom.xml run.sh /app/
 RUN         mvn clean package
-C
+ENTRYPOINT  ["bash", "run.sh"]
 
 
 
