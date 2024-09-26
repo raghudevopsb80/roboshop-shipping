@@ -9,4 +9,4 @@ if [ -z "${DB_HOST}" ]; then
 fi
 
 
-/bin/java -jar /app/target/shipping-1.0.jar
+java -jar /app/target/shipping-1.0.jar
