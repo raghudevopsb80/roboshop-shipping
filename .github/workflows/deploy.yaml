@@ -1,0 +1,17 @@
+name: Deployment Pipeline
+run-name: "${{ github.event.inputs.appVersion }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      appVersion:
+        required: true
+      appName:
+        required: true
+
+jobs:
+  deploy:
+    uses: raghudevopsb80/roboshop-github-actions/.github/workflows/deploy.yaml@main
+    with:
+      appVersion: "${{ github.event.inputs.appVersion }}"
+      appName: "${{ github.event.inputs.appName }}"
