@@ -18,6 +18,5 @@ if [ -z "${NEW_RELIC_APP_NAME}" ]; then
   exit 1
 fi
 
-java -jar /app/target/shipping-1.0.jar
 java -javaagent:/app/newrelic/newrelic.jar -jar /app/target/shipping-1.0.jar
 
