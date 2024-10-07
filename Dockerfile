@@ -9,6 +9,7 @@ COPY        src /app/src
 COPY        pom.xml run.sh /app/
 RUN         mvn clean package
 RUN         curl -L -O https://download.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic-java.zip && unzip newrelic-java.zip && rm -f newrelic-java.zip
+COPY        newrelic.yml /app/newrelic/newrelic.yml
 ENTRYPOINT  ["bash", "run.sh"]
 
 
