@@ -20,5 +20,5 @@ fi
 
 sed -i -e "s/LICENSE_KEY/${NEW_RELIC_LICENSE_KEY}/" /app/newrelic/newrelic.yml
 
-java -javaagent:/app/newrelic/newrelic.jar -jar /app/target/shipping-1.0.jar
+java -javaagent:/app/newrelic/newrelic.jar -jar /app/shipping.jar
 
