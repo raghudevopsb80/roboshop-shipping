@@ -11,6 +11,7 @@ RUN         mvn clean package
 
 
 FROM        docker.io/redhat/ubi9
+RUN         dnf install unzip -y
 RUN         cd /opt && curl -L https://corretto.aws/downloads/latest/amazon-corretto-17-x64-linux-jdk.tar.gz | tar -xz
 RUN         mkdir /app
 WORKDIR     /app
