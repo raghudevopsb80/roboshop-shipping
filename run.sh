@@ -18,7 +18,7 @@ if [ -z "${NEW_RELIC_APP_NAME}" ]; then
   exit 1
 fi
 
-sed -i -e "s/LICENSE_KEY/${NEW_RELIC_LICENSE_KEY}/" /app/newrelic/newrelic.yml
+#sed -i -e "s/LICENSE_KEY/${NEW_RELIC_LICENSE_KEY}/" /app/newrelic/newrelic.yml
 
-java -javaagent:/app/newrelic/newrelic.jar -jar /app/shipping.jar
+java -javaagent:/app/newrelic/newrelic.jar -Dnewrelic.config.license_key=${NEW_RELIC_LICENSE_KEY} -jar /app/target/shipping-1.0.jar
 
